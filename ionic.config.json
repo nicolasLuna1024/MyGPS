@@ -1,0 +1,7 @@
+{
+  "name": "myGPS",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
