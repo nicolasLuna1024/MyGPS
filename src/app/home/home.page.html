@@ -1,20 +1,28 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Guardar Ubicación</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<!-- <ion-content class="ion-padding"> -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ubicación Actual</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input
+        label="Tu nombre"
+        [(ngModel)]="nombre"
+        placeholder="Ingresa tu nombre">
+      </ion-input>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+      <p *ngIf="latitude && longitude">
+        <strong>Latitud:</strong> {{ latitude }}<br />
+        <strong>Longitud:</strong> {{ longitude }}<br />
+        <a [href]="url" target="_blank">Ver en Google Maps</a>
+      </p>
+
+      <ion-button expand="block" (click)="guardar()">Guardar en Firebase</ion-button>
+    </ion-card-content>
+  </ion-card>
+<!-- </ion-content> -->
